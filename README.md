@@ -46,4 +46,29 @@ El usuario debe ingresar:
 - **Abonos extra (opcional)**
 - **Valor del abono**
 
+ ## ⚙️ Proceso del Sistema
+La aplicación utiliza la fórmula financiera de ahorro programado:
+
+**Cuota = Meta × [ i / ((1 + i)^n − 1) ]**
+
+Donde:
+- **Meta** = Valor objetivo a alcanzar  
+- **i** = Tasa de interés mensual  
+- **n** = Número de meses  
+- **Cuota** = Valor que debe ahorrarse mensualmente  
+
+**Caso especial:** Si la tasa es 0%, se usa: **Cuota = Meta / n**
+
+### Funcionamiento:
+1. **Validación:** Se verifican que meta, plazo y tasa sean válidos.
+2. **Cálculo inicial:** Se determina la cuota mensual con base en la fórmula.
+3. **Simulación mes a mes:** Se proyecta el crecimiento del ahorro aplicando los intereses.
+4. **Abonos extras (opcional):**
+   - Se suman al capital acumulado en el mes indicado.
+   - Empiezan a generar intereses inmediatamente.
+   - Se recalcula la cuota para los meses restantes.
+5. **Resultado final:** Se muestra la cuota mensual, total de intereses y total ahorrado.
+
+---
+
 
