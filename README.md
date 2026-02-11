@@ -57,7 +57,7 @@ Donde:
 - **n** = Número de meses  
 - **Cuota** = Valor que debe ahorrarse mensualmente  
 
-**Caso especial:** Si la tasa es 0%, se usa: **Cuota = Meta / n**
+❗ **Caso especial:** Si la tasa es 0%, se usa: **Cuota = Meta / n** ❗
 
 ### Funcionamiento:
 1. **Validación:** Se verifican que meta, plazo y tasa sean válidos.
@@ -70,5 +70,19 @@ Donde:
 5. **Resultado final:** Se muestra la cuota mensual, total de intereses y total ahorrado.
 
 ---
+## 📤 Salidas del Sistema
+El sistema mostrará:
+-  **Cuota mensual:** Valor que debe ahorrarse cada mes para alcanzar la meta.
+-  **Total de intereses:** Dinero adicional generado durante el periodo de ahorro.
+-  **Total ahorrado:** Suma de la meta más los intereses ganados.
+-  **Nuevo plan tras abonos:** Si se realizan abonos extras, muestra la cuota recalculada.
+-  **Confirmación de meta:** Mensaje cuando la meta sea alcanzada.
 
+### Mensajes de Error
+En caso de datos inválidos:
+- ❌ "ERROR: La meta debe ser mayor que cero"
+- ❌ "ERROR: El plazo debe ser al menos 1 mes"
+- ❌ "ERROR: La tasa de interés no puede ser negativa"
+
+---
 
