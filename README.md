@@ -10,7 +10,14 @@
 - Alejandro Tello Giraldo
   
  --- 
- 
+ ###  Persona entrevistada
+- **Nombre:** Karen Londoño 
+- **Cargo:** Gerente de proyectos en una compañía financiera
+- Experiencia relacionada: Finanzas
+- Fecha de la entrevista: 08/02/2026
+
+---
+
 ###  Descripción del Proyecto
 
 La **Calculadora de Ahorro Programado** es una aplicación diseñada para ayudar a las personas a planificar su ahorro mensual con el fin de alcanzar una meta financiera específica en un periodo de tiempo determinado.
@@ -29,4 +36,3 @@ Facilitar la planificación financiera personal mediante una herramienta que per
 - ➕ Registrar abonos adicionales.
 - 📊 Visualizar el progreso del ahorro.
 
----
