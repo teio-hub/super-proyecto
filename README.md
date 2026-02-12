@@ -83,6 +83,7 @@ En caso de datos inválidos:
 - ❌ "ERROR: La meta debe ser mayor que cero"
 - ❌ "ERROR: El plazo debe ser al menos 1 mes"
 - ❌ "ERROR: La tasa de interés no puede ser negativa"
+- ❌ "ERROR: El plazo no puede ser negativo"
 
 ---
 
