@@ -59,6 +59,22 @@ Donde:
 
 ❗ **Caso especial:** Si la tasa es 0%, se usa: **Cuota = Meta / n** ❗
 
+## Fórmula de cálculo de cuota
+
+**Cuota mensual (sin abono):**
+    C = meta × (r / ((1 + r)^n - 1))
+
+**Cuota mensual (con abono extra en el último mes):**
+    C = (meta - abono) × (r / ((1 + r)^n - 1))
+
+**Donde:**
+    r = tasa de interés mensual
+    n = plazo en meses
+    abono = monto del abono extra (reduce la meta directamente)
+
+**Total de intereses ganados:**
+    TI = (meta - abono) - C × n
+
 ### Funcionamiento:
 1. **Validación:** Se verifican que meta, plazo y tasa sean válidos.
 2. **Cálculo inicial:** Se determina la cuota mensual con base en la fórmula.
