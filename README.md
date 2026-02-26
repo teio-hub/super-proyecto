@@ -70,7 +70,7 @@ Donde:
 **Donde:**
     r = tasa de interés mensual
     n = plazo en meses
-    abono = monto del abono extra (reduce la meta directamente)
+    abono = monto del abono extra 
 
 **Total de intereses ganados:**
     TI = (meta - abono) - C × n
@@ -96,10 +96,11 @@ El sistema mostrará:
 
 ### Mensajes de Error
 En caso de datos inválidos:
-- ❌ "ERROR: La meta debe ser mayor que cero"
-- ❌ "ERROR: El plazo debe ser al menos 1 mes"
-- ❌ "ERROR: La tasa de interés no puede ser negativa"
-- ❌ "ERROR: El plazo no puede ser negativo"
+- ❌ `MetaInvalida`: "ERROR: La meta debe ser mayor que cero. Se recibió meta={valor}. Ingrese un valor positivo."
+- ❌ `PlazoInvalido`: "ERROR: El plazo no puede ser cero. Se recibió plazo={valor}. Ingrese un plazo de al menos 1 mes."
+- ❌ `PlazoInvalido`: "ERROR: El plazo no puede ser negativo. Se recibió plazo={valor}. Ingrese un plazo de al menos 1 mes."
+- ❌ `InteresInvalido`: "ERROR: La tasa de interés no puede ser negativa. Se recibió interes={valor}. Ingrese una tasa mayor o igual a cero."
+- ❌ `MesAbonoInvalido`: "ERROR: El mes del abono no es válido. Se recibió mes_abono={valor} con plazo={valor}. El mes debe estar entre 1 y {plazo}."
 
 ---
 
