@@ -1,106 +1,102 @@
-Ahorro Programado
+<h1>📌 Calculadora de Ahorro Programado 
+  <img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" width="60px">
+</h1>
+---
+###  Creadores
+- María Paula Ospina Zabala
+- Alejandro Tello Giraldo
+  
+ --- 
+ ### 👩‍💻 Persona entrevistada
+- **Nombre:** Karen Londoño 
+- **Cargo:** Gerente de proyectos en una compañía financiera
+- **Experiencia relacionada:** Finanzas
+- **Fecha de la entrevista:** 08/02/2026
+---
+### 📖 Descripción del Proyecto
+La **Calculadora de Ahorro Programado** es una aplicación diseñada para ayudar a las personas a planificar su ahorro mensual con el fin de alcanzar una meta financiera específica en un periodo de tiempo determinado.
+La aplicación permite calcular el valor que se debe ahorrar mensualmente y, además, ofrece la posibilidad de registrar **abonos extra** en cualquier momento y por cualquier cantidad, ajustando el ahorro restante de forma automática.
+---
+### 🎯 Objetivo
+Esta herramienta busca facilitar al usuario una ayuda para alcanzar su meta de ahorro de una manera sencilla, además de brindarle una planificación financiera personal que permita:
+-  Definir una meta de ahorro.
+-  Establecer un plazo en meses.
+-  Calcular el ahorro mensual necesario.
+-  Registrar abonos adicionales.
+-  Visualizar el progreso del ahorro.
 
-Este proyecto contiene las pruebas unitarias para el cálculo de cuotas de ahorro programado,
-usando la fórmula de anualidad ordinaria para determinar el pago regular requerido.
+## 📥 Entradas del Sistema
+El usuario debe ingresar:
+- **Meta de ahorro (Meta)**  
+- **Tasa de interés mensual (i)**  
+- **Plazo en meses (n)**  
+- **Abonos extra (opcional)**
+- **Valor del abono**
 
-## Contenido
+## ⚙️ Proceso del Sistema
+La aplicación utiliza la fórmula financiera de ahorro programado:
+**Cuota = Meta × [ i / ((1 + i)^n − 1) ]**
+Donde:
+- **Meta** = Valor objetivo a alcanzar  
+- **i** = Tasa de interés mensual  
+- **n** = Número de meses  
+- **Cuota** = Valor que debe ahorrarse mensualmente  
 
-### test_ahorro.py
+❗ **Caso especial:** Si la tasa es 0%, se usa: **Cuota = Meta / n** ❗
 
-Implementa las siguientes pruebas unitarias:
+## Fórmula de cálculo de cuota
 
-Caso Normal 1
-- Entradas
-  - Meta: 10.000.000
-  - Tasa: 1% mensual
-  - Plazo: 24 meses
-- Salidas
-  - Cuota: 370.734.72
+**Cuota mensual (sin abono):**
+```
+C = meta × (r / ((1 + r)^n - 1))
+```
 
-Caso Normal 2
-- Entradas
-  - Meta: 5.000.000
-  - Tasa: 0.75% mensual
-  - Plazo: 12 meses
-- Salidas
-  - Cuota: 399.757.38
+**Cuota mensual (con abono extra):**
+```
+C = (meta - abono) × (r / ((1 + r)^n - 1))
+```
 
-Caso Normal 3
-- Entradas
-  - Meta: 20.000.000
-  - Tasa: 0.83% mensual
-  - Plazo: 36 meses
-- Salidas
-  - Cuota: 478.968.21
+**Donde:**
+- `r` = tasa de interés mensual
+- `n` = plazo en meses
+- `abono` = monto del abono extra (reduce la meta directamente)
 
-Tasa Cero
-- Entradas
-  - Meta: 10.000.000
-  - Tasa: 0% mensual
-  - Plazo: 24 meses
-- Salidas
-  - Cuota: 416.666.67
+**Total de intereses ganados (sin abono):**
+```
+TI = meta - C × n
+```
 
-Plazo 1 Mes
-- Entradas
-  - Meta: 500.000
-  - Tasa: 1% mensual
-  - Plazo: 1 mes
-- Salidas
-  - Cuota: 500.000
+**Total de intereses ganados (con abono):**
+```
+TI = (meta - abono) - C × n
+```
 
-Abono Extra
-- Entradas
-  - Meta: 10.000.000
-  - Tasa: 1% mensual
-  - Plazo: 24 meses
-  - Abono: 2.000.000
-  - Mes del abono: 24
-- Salidas
-  - Cuota: 296.587.78
+### Funcionamiento:
+1. **Validación:** Se verifican que meta, plazo y tasa sean válidos.
+2. **Cálculo inicial:** Se determina la cuota mensual con base en la fórmula.
+3. **Simulación mes a mes:** Se proyecta el crecimiento del ahorro aplicando los intereses.
+4. **Abonos extras (opcional):**
+   - Se suman al capital acumulado en el mes indicado.
+   - Empiezan a generar intereses inmediatamente.
+   - Se recalcula la cuota para los meses restantes.
+5. **Resultado final:** Se muestra la cuota mensual, total de intereses y total ahorrado.
 
-Cuota Única
-- Entradas
-  - Meta: 20.000.000
-  - Tasa: 0.83% mensual
-  - Plazo: 36 meses
-  - Abono: 5.000.000
-  - Mes del abono: 36
-- Salidas
-  - Cuota: 359.226.16
+---
+## 📤 Salidas del Sistema
+El sistema mostrará:
+-  **Cuota mensual:** Valor que debe ahorrarse cada mes para alcanzar la meta.
+-  **Total de intereses:** Dinero adicional generado durante el periodo de ahorro.
+-  **Total ahorrado:** Suma de la meta más los intereses ganados.
+-  **Nuevo plan tras abonos:** Si se realizan abonos extras, muestra la cuota recalculada.
+-  **Confirmación de meta:** Mensaje cuando la meta sea alcanzada.
 
-Error Meta Cero
-- Entradas
-  - Meta: 0
-  - Tasa: 1% mensual
-  - Plazo: 24 meses
-- Salidas
-  - Error: La meta debe ser mayor que cero
+### Mensajes de Error
+En caso de datos inválidos, el sistema indica qué dato causó el problema y cómo corregirlo:
 
-Error Plazo Cero
-- Entradas
-  - Meta: 10.000.000
-  - Tasa: 1% mensual
-  - Plazo: 0
-- Salidas
-  - Error: El plazo debe ser al menos 1 mes
+- ❌ `MetaInvalida`: "ERROR: La meta debe ser mayor que cero. Se recibió meta={valor}. Ingrese un valor positivo."
+- ❌ `PlazoInvalido`: "ERROR: El plazo no puede ser cero. Se recibió plazo={valor}. Ingrese un plazo de al menos 1 mes."
+- ❌ `PlazoInvalido`: "ERROR: El plazo no puede ser negativo. Se recibió plazo={valor}. Ingrese un plazo de al menos 1 mes."
+- ❌ `InteresInvalido`: "ERROR: La tasa de interés no puede ser negativa. Se recibió interes={valor}. Ingrese una tasa mayor o igual a cero."
+- ❌ `MesAbonoInvalido`: "ERROR: El mes del abono no es válido. Se recibió mes_abono={valor} con plazo={valor}. El mes debe estar entre 1 y {plazo}."
 
-Error Tasa Negativa
-- Entradas
-  - Meta: 10.000.000
-  - Tasa: -2% mensual
-  - Plazo: 24 meses
-- Salidas
-  - Error: La tasa de interés no puede ser negativa
-
-Error Plazo Negativo
-- Entradas
-  - Meta: 20.000.000
-  - Tasa: 1% mensual
-  - Plazo: -12 meses
-- Salidas
-  - Error: El plazo no puede ser negativo
-
-### logica_ahorro.py
-
-Implementa la funcionalidad que cumple con estos casos.
+---
