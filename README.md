@@ -15,6 +15,7 @@
 - **Fecha de la entrevista:** 08/02/2026
 
 ---
+
 ### 📖 Descripción del Proyecto
 La **Calculadora de Ahorro Programado** es una aplicación diseñada para ayudar a las personas a planificar su ahorro mensual con el fin de alcanzar una meta financiera específica en un periodo de tiempo determinado.
 La aplicación permite calcular el valor que se debe ahorrar mensualmente y, además, ofrece la posibilidad de registrar **abonos extra** en cualquier momento y por cualquier cantidad, ajustando el ahorro restante de forma automática.
