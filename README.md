@@ -34,7 +34,7 @@ El usuario debe ingresar:
 - **Meta de ahorro (Meta)**  
 - **Tasa de interés mensual (i)**  
 - **Plazo en meses (n)**  
-- **Abonos extra (opcional)**
+- **Abonos extra (opcional y siempre en la última cuota)**
 - **Valor del abono**
 
 ## ⚙️ Proceso del Sistema
