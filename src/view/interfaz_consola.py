@@ -16,7 +16,9 @@
  - "mes" → "mes_del_abono" consistente con logica_ahorro.py
 """
 
-import srs.model.logica_ahorro as logica_ahorro
+import sys
+sys.path.append("src")
+from view import interfaz_consola
 
 
 def pedir_float(mensaje):

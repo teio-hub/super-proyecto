@@ -7,10 +7,10 @@
    - "mes_abono" → "mes_del_abono"
 """
 
-# Todas las pruebas unitarias importan la biblioteca unittest
 import unittest
-# Las pruebas importan los modulos que hacen el trabajo, en este caso el modulo logica_ahorro
-import srs.model.logica_ahorro as logica_ahorro
+import sys
+sys.path.append("src")
+from model import logica_ahorro
 
 # Debe existir por lo menos una clase que contenga las pruebas unitarias
 # descendiente de unittest.TestCase
